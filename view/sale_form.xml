@@ -2,7 +2,7 @@
 <!-- This file is part sale_invoices_paid module for Tryton.
 The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
 <data>
-    <xpath expr="/form/field[@name=&quot;reference&quot;]" position="after">
+    <xpath expr="/form/notebook/page[@id=&quot;other&quot;]/field[@name=&quot;company&quot;]" position="after">
         <label name="shipments_done"/>
         <field name="shipments_done"/>
     </xpath>
