@@ -5,11 +5,10 @@ from trytond.model import fields
 from trytond.pool import PoolMeta
 
 __all__ = ['Sale']
-__metaclass__ = PoolMeta
 
 
 class Sale:
-    'Sale'
+    __metaclass__ = PoolMeta
     __name__ = 'sale.sale'
     shipments_done = fields.Function(fields.Boolean('Delivered'),
         'get_shipments_done')
