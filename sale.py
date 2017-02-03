@@ -18,18 +18,14 @@ class Sale:
     def get_shipments_done(cls, records, name):
         """Get shipments are done"""
         result = {}
-        done = False
-        shipment_done = []
-        shipment_total = []
         for sale in records:
+            done = False
+            shipments_done = []
             if sale.shipments:
                 for shipment in sale.shipments:
-                    if shipment.effective_date != 'None':
-                        shipment_total.append(shipment.id)
                     if shipment.state == 'done':
-                        shipment_done.append(shipment.id)
-                if len(shipment_done) == len(shipment_total):
+                        shipments_done.append(shipment.id)
+                if len(shipments_done) == len(sale.shipments):
                     done = True
             result[sale.id] = done
         return result
-
